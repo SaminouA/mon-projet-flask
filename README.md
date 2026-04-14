@@ -1,0 +1,1 @@
+![CI](https://github.com/SaminouA/mon-projet-flask/actions/workflows/ci.yml/badge.svg)
