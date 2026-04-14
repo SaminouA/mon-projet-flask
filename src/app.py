@@ -14,5 +14,9 @@ def health():
 def hello(name):
     return jsonify({"message": f"Bonjour {name} !"})
 
+@app.route("/add/<a>/<b>")
+def add(a, b):
+    return jsonify({"result": int(a) + int(b)})
+
 if __name__ == "__main__":
     app.run(debug=True)

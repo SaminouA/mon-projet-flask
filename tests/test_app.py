@@ -26,3 +26,12 @@ def test_hello(client):
 def test_not_found(client):
     response = client.get("/page-inexistante")
     assert response.status_code == 404
+
+def test_add(client):
+    response = client.get("/add/3/5")
+    assert response.status_code == 200
+    assert response.get_json()["result"] == 8
+    
+def test_add_negative(client):
+    response = client.get("/add/-1/1")
+    assert response.get_json()["result"] == 0
