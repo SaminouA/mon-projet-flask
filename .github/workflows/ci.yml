@@ -29,6 +29,9 @@ jobs:
       - name: Installer les dépendances
         run: pip install -r requirements.txt
 
+      - name: Vérification du formatage
+        run: black --check src/ tests/
+
       - name: Linting avec flake8
         run: flake8 src/ tests/ --max-line-length=120
 
