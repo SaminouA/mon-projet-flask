@@ -32,8 +32,8 @@ jobs:
       - name: Vérification du formatage
         run: black --check src/ tests/
 
-      - name: Linting avec flake8
-        run: flake8 src/ tests/ --max-line-length=120
+      - name: Linting avec Ruff
+        run: ruff check src/ tests/
 
       - name: Lancer les tests avec couverture
         run: |
