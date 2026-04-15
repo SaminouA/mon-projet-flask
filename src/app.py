@@ -28,5 +28,13 @@ def about():
     return jsonify({"app": "Mon projet Flask", "version": "1.0"})
 
 
+# @app.route("/eval")
+# def eval_route():
+#     from flask import request
+#     expr = request.args.get("expr", "1+1")
+#     result = eval(expr)  # DANGEREUX !
+#     return jsonify({"result": str(result)})
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
