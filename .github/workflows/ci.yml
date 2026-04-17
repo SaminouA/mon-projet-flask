@@ -74,4 +74,4 @@ jobs:
             echo "ERREUR: API_KEY non definie"
             exit 1
           fi
-          echo "API_KEY est bien injectee (valeur masquee)
+          echo "API_KEY est bien injectee (valeur masquee)"
