@@ -1,6 +1,9 @@
+import os
+
 from flask import Flask, jsonify
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-key-insecure")
 
 
 @app.route("/")
