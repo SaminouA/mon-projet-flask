@@ -33,6 +33,9 @@ jobs:
       - name: Linting (ruff)
         run: ruff check src/ tests/
 
+      - name: Scan dependances (pip-audit)
+        run: pip-audit -r requirements.txt
+
       - name: Sécurité (bandit)
         run: bandit -r src/ -ll
 
