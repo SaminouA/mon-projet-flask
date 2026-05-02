@@ -6,3 +6,4 @@ ruff
 bandit
 semgrep
 pip-audit
+gunicorn
