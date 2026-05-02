@@ -67,6 +67,7 @@ jobs:
       - name: Build de l'image
         run: |
           IMAGE=ghcr.io/${{ github.repository }}
+          IMAGE=$(echo $IMAGE | tr '[:upper:]' '[:lower:]')
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
           docker build \
             -t $IMAGE:${{ github.sha }} \
@@ -77,6 +78,7 @@ jobs:
       - name: Tester le conteneur
         run: |
           IMAGE=ghcr.io/${{ github.repository }}
+          IMAGE=$(echo $IMAGE | tr '[:upper:]' '[:lower:]')
           docker run -d -p 5000:5000 --name test-container $IMAGE:${{ github.sha }}
           sleep 5
           curl -f http://localhost:5000/health
@@ -85,6 +87,7 @@ jobs:
       - name: Push de l'image
         run: |
           IMAGE=ghcr.io/${{ github.repository }}
+          IMAGE=$(echo $IMAGE | tr '[:upper:]' '[:lower:]')
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
           docker push $IMAGE:${{ github.sha }}
           docker push $IMAGE:sha-$SHORT_SHA
