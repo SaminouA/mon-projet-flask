@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/SaminouA/mon-projet-flask/compare/v1.2.0...v1.2.1) (2026-05-06)
+
+
+### Documentation
+
+* ajout compte-rendu TP6 ([240b5ca](https://github.com/SaminouA/mon-projet-flask/commit/240b5ca110252484f64b52c470519546903822aa))
+
 ## [1.2.0](https://github.com/SaminouA/mon-projet-flask/compare/v1.1.0...v1.2.0) (2026-05-06)
 
 
