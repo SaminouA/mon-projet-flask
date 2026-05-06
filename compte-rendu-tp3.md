@@ -2,63 +2,6 @@
 
 
 
-## Partie 0 — Installation des outils
-
-Les outils suivants ont été ajoutés au `requirements.txt` :
-- `black` : formatage automatique du code Python
-- `ruff` : linting avancé (remplace flake8)
-- `bandit` : analyse de sécurité statique Python
-- `semgrep` : analyse statique multi-langage
-
----
-
-## Partie 1 — Formatage avec Black
-
-Black a été utilisé pour garantir un style de code uniforme.
-Dans la CI, on utilise `--check` pour vérifier sans modifier :
-
-```bash
-black --check src/ tests/
-```
-
-Localement, on applique le formatage :
-
-```bash
-black src/ tests/
-```
-
----
-
-## Partie 2 — Linting avec Ruff
-
-Ruff remplace flake8 avec une vitesse bien supérieure.
-Un fichier `pyproject.toml` centralise la configuration :
-
-```toml
-[tool.ruff]
-line-length = 120
-target-version = "py312"
-
-[tool.ruff.lint]
-select = ["E", "W", "F", "I", "B", "UP"]
-```
-
----
-
-## Partie 3 — Analyse de sécurité
-
-Une route dangereuse utilisant `eval()` a été introduite volontairement pour tester les outils,
-puis supprimée après confirmation des détections.
-
----
-
-## Partie 4 — Pre-commit hooks
-
-Les hooks pre-commit ont été configurés pour vérifier automatiquement le code avant chaque commit :
-black, ruff, vérification des espaces et du YAML.
-
----
-
 ## Questions
 
 ### Question 1 — Quelle est la différence entre un linter et un formatter ? Donnez un exemple de chaque en Python.

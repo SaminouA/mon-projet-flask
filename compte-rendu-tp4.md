@@ -1,32 +1,5 @@
 # Compte Rendu TP4 — Sécurité dans l'Usine Logicielle
 
-## Partie 1 — Scan de dépendances avec pip-audit
-
-pip-audit a été intégré dans le pipeline pour détecter les CVE dans les dépendances Python.
-Une vulnérabilité a été simulée avec `flask==2.0.0` pour observer les alertes.
-
----
-
-## Partie 2 — Dependabot
-
-Dependabot a été configuré pour scanner chaque semaine les dépendances Python
-et les actions GitHub, et créer des PR de mise à jour automatiquement.
-
----
-
-## Partie 3 — Gestion des secrets
-
-Un secret `API_KEY` a été créé dans GitHub Secrets et injecté dans le pipeline.
-Le code Flask a été modifié pour lire `SECRET_KEY` depuis les variables d'environnement.
-
----
-
-## Partie 4 — GitLeaks
-
-GitLeaks a été ajouté au tout début du pipeline pour scanner tout l'historique Git
-à la recherche de secrets accidentellement commités.
-
----
 
 ## Questions
 

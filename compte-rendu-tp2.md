@@ -3,27 +3,7 @@
 **Sup de Vinci 2025/2026**
 **Nom : Nadira**
 
----
 
-## Partie 1 — Application Flask
-
-Une application Flask a été créée avec les routes suivantes :
-- `/` : page d'accueil retournant un message de bienvenue
-- `/health` : état de santé de l'application
-- `/hello/<name>` : message personnalisé avec le nom fourni
-- `/add/<a>/<b>` : addition de deux nombres entiers
-- `/about` : informations sur l'application
-
----
-
-## Partie 2 — Tests automatisés
-
-Des tests ont été écrits avec pytest pour vérifier le bon fonctionnement de chaque route,
-les codes de réponse HTTP, et les cas particuliers (ex : nombres négatifs).
-
-**Résultat : 7 tests passés avec succès.**
-
----
 
 ## Questions
 
