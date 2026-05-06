@@ -4,13 +4,12 @@ on:
   push:
     branches: [main]
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
@@ -28,14 +27,12 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
-
       - name: Connexion a ghcr.io
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Build et push avec tag de version
         run: |
           IMAGE=ghcr.io/${{ github.repository }}
